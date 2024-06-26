@@ -41,7 +41,8 @@ def time_tokenize(x, duration, num_bins, num_text_tokens):
 # Args
 parser = argparse.ArgumentParser(parents=[get_args_parser()])
 args = parser.parse_args()
-# args.model_name = os.path.join(os.environ["TRANSFORMERS_CACHE"], args.model_name)
+args.model_name = os.path.join(os.environ["TRANSFORMERS_CACHE"], args.model_name)
+print(args.model_name)
 device = torch.device(args.device)
 
 # Fix seeds
